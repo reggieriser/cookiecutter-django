@@ -7,6 +7,8 @@ set -o nounset
 
 cmd="$@"
 
+export REDIS_URL=redis://redis:6379
+
 if [ -z "${POSTGRES_USER}" ]; then
     # the official postgres image uses 'postgres' as default user if not set explictly.
     export POSTGRES_USER=postgres
